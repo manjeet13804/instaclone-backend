@@ -57,7 +57,9 @@ const user = [
         "date": "10/06/2022"
     }
 ]
-
+app.get("/",(req,res)=>{
+    res.send("welcome to home page")
+})
 app.get("/user",(req,res)=>{
     res.status(200).json({
         user:user
