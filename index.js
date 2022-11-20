@@ -15,10 +15,10 @@ app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(express.static('images'))
-const multer=require("multer");
+// const multer=require("multer");
 const cors=require("cors")
 const fileUpload=require("express-fileupload")
-const upload=multer({dest:"images"})
+// const upload=multer({dest:"images"})
 
 app.use(cors({
     origin:"*"
@@ -65,13 +65,13 @@ app.get("/user",(req,res)=>{
         user:user
     })
 })
-if (typeof (process.env.CLOUDINARY_URL) === 'undefined') {
-    console.warn('!! cloudinary config is undefined !!');
-    console.warn('export CLOUDINARY_URL or set dotenv file');
-  } else {
-    console.log('cloudinary config:');
-    console.log(cloudinary.config());
-  }
+// if (typeof (process.env.CLOUDINARY_URL) === 'undefined') {
+//     console.warn('!! cloudinary config is undefined !!');
+//     console.warn('export CLOUDINARY_URL or set dotenv file');
+//   } else {
+//     console.log('cloudinary config:');
+//     console.log(cloudinary.config());
+//   }
 app.post("/user",
 (req,res)=>{
     
