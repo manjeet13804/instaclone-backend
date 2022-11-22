@@ -23,14 +23,14 @@ const fileUpload=require("express-fileupload")
 app.use(cors({
     origin:"*"
 }))
-app.use(fileUpload({
-    useTempFiles:true
-}))
-cloudinary.config({
-    cloud_name:"dgi111dfx",
-    api_key:"824257723988796",
-    api_secret:"21AwblGpCzNsbbYaNOduOYITjg4"
-})
+// app.use(fileUpload({
+//     useTempFiles:true
+// }))
+// cloudinary.config({
+//     cloud_name:"dgi111dfx",
+//     api_key:"824257723988796",
+//     api_secret:"21AwblGpCzNsbbYaNOduOYITjg4"
+// })
 const user = [
     {
         "name": "Siva",
@@ -75,20 +75,20 @@ app.get("/user",(req,res)=>{
 app.post("/user",
 (req,res)=>{
     
-    const {name,location,description}=req.body;
-    const files=req.file.PostImage
-    cloudinary.uploader.upload(files.useTempFiles,(err,result)=>{
-        console.log(result)
-    })
-    const newPost={
-        name,
-        location,
-        likes:0,
-        description,
-        PostImage:req.file.path,
-        date:new Date()
-    }
-   user.unshift(newPost)
+    // const {name,location,description}=req.body;
+    // const files=req.file.PostImage
+    // cloudinary.uploader.upload(files.useTempFiles,(err,result)=>{
+    //     console.log(result)
+    // })
+    // const newPost={
+    //     name,
+    //     location,
+    //     likes:0,
+    //     description,
+    //     PostImage:req.file.path,
+    //     date:new Date()
+    // }
+//    user.unshift(newPost)
    res.send({
        success:true,
       
